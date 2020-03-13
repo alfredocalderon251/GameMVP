@@ -95,6 +95,7 @@
     <Content Include="app\templates\app\MyGames.html" />
     <Content Include="app\templates\app\NewAccount.html" />
     <Content Include="app\templates\app\product.html" />
+    <None Include="FolderProfile.pubxml" />
     <Content Include="libman.json" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
