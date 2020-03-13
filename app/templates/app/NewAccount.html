@@ -1,0 +1,74 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            <form action="." method="post" class="form-horizontal">
+                {% csrf_token %}
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                <div class="form-group">
+                    <label for="id_username" class="col-md-2 control-label">User name</label>
+                    <div class="col-md-10">
+                        {{ form.username }}
+                        {#<input type="text" class="form-control" placeholder="UserName" name="username" required />#}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="col-md-2 control-label">Email</label>
+                    <div class="col-md-10">
+                        {{ form.email}}
+                       {#<input id="email" type="email" class="form-control" placeholder="Email" name="email" required />#}
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="id_password" class="col-md-2 control-label">Password</label>
+                    <div class="col-md-10">
+                        {{ form.password}}
+                        {#<input id="id_password" type="password" class="form-control" placeholder="Password" name="password" required />#}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_confirmpassword" class="col-md-2 control-label">Confirm Password</label>
+                    <div class="col-md-10">
+                        {{ form.passwordconfirmation}}
+                        {#<input id="id_confirmpassword" type="password" class="form-control" placeholder="Confirm Password" name="confirmpassword" required />#}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="hidden" name="next" value="/" />
+                        <input type="submit" value="Register" class="btn btn-success" />
+                        
+                    </div>
+                </div>
+                {% if form.errors %}
+                <p class="validation-summary-errors">Please verify your data.</p>
+                {% endif %}
+            </form>
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm"></section>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    {% load staticfiles %}
+<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+
+{% endblock %}

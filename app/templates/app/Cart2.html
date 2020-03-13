@@ -1,0 +1,19 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+<link href="../../static/app/content/Catalog.css" rel="stylesheet" />
+
+<h2>Cart</h2>
+<div>
+    {% for m in cartlist %}
+
+    <span>{{m.product_id}}</span>
+
+    {% endfor %}
+</div>
+
+
+
+
+<script src="../../static/app/scripts/Catalog.js"></script>
+{% endblock %}

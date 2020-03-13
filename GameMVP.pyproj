@@ -31,6 +31,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="api\admin.py" />
+    <Compile Include="api\apps.py" />
+    <Compile Include="api\migrations\__init__.py" />
+    <Compile Include="api\models.py" />
+    <Compile Include="api\tests.py" />
+    <Compile Include="api\views.py" />
+    <Compile Include="api\__init__.py" />
+    <Compile Include="app\admin.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\forms.py" />
     <Compile Include="app\models.py" />
     <Compile Include="app\tests.py" />
@@ -44,18 +54,48 @@
     <Compile Include="GameMVP\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="api\" />
+    <Folder Include="api\migrations\" />
     <Folder Include="app\" />
     <Folder Include="app\migrations\" />
     <Folder Include="app\static\" />
     <Folder Include="app\static\app\" />
     <Folder Include="app\static\app\content\" />
     <Folder Include="app\static\app\fonts\" />
+    <Folder Include="app\static\app\img\" />
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="GameMVP\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\static\app\content\bootstrap.css.map" />
+    <Content Include="app\static\app\content\bootstrap.min.css.map" />
+    <Content Include="app\static\app\content\Catalog.css" />
+    <Content Include="app\static\app\content\swiper.css" />
+    <Content Include="app\static\app\content\swiper.min.css" />
+    <Content Include="app\static\app\img\mhw_iceborne.jpg" />
+    <Content Include="app\static\app\scripts\bootstrap.bundle.js" />
+    <Content Include="app\static\app\scripts\bootstrap.bundle.js.map" />
+    <Content Include="app\static\app\scripts\bootstrap.bundle.min.js" />
+    <Content Include="app\static\app\scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="app\static\app\scripts\bootstrap.js.map" />
+    <Content Include="app\static\app\scripts\bootstrap.min.js.map" />
+    <Content Include="app\static\app\scripts\Catalog.js" />
+    <Content Include="app\static\app\scripts\jquery-3.4.1.min.js" />
+    <Content Include="app\static\app\scripts\swiper.js" />
+    <Content Include="app\static\app\scripts\swiper.js.map" />
+    <Content Include="app\static\app\scripts\swiper.min.js" />
+    <Content Include="app\static\app\scripts\swiper.min.js.map" />
+    <Content Include="app\templates\app\Cart2.html" />
+    <Content Include="app\templates\app\game_old.html" />
+    <Content Include="app\templates\app\Cart.html" />
+    <Content Include="app\templates\app\Checkout.html" />
+    <Content Include="app\templates\app\game.html" />
+    <Content Include="app\templates\app\MyGames.html" />
+    <Content Include="app\templates\app\NewAccount.html" />
+    <Content Include="app\templates\app\product.html" />
+    <Content Include="libman.json" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />

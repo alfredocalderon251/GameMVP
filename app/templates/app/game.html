@@ -1,0 +1,113 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<link href="../../static/app/content/swiper.min.css" rel="stylesheet" />
+
+<h2>{{game.name}}</h2>
+
+
+<div class="row row-cols-2">
+    <div class="col-8">
+        <div style="height:500px;">
+
+
+<div class="swiper-container gallery-top">
+    <div class="swiper-wrapper">
+
+        {% for m in images %}
+        <div class="swiper-slide" style="background-image:url({{m}})"></div>
+
+        {% endfor %}
+      
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+  </div>
+  <div class="swiper-container gallery-thumbs">
+    <div class="swiper-wrapper">
+
+        {% for m in images %}        
+        <div class="swiper-slide" style="background-image:url({{m}})"></div>
+
+        {% endfor %}
+      
+      
+    </div>
+  </div>
+
+    </div>
+
+    </div>
+    <div class="col-4">
+
+        <div class="card" style="width: 18rem;">
+  <img src="{{game.front_Image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{game.name}}</h5>
+    <p class="card-text">{{game.description}}</p>
+      <div class="card-text">
+          Categories:
+          <div class="badges_rows">
+          {% for m in categories %}
+
+      <span class="badge badge-pill badge-secondary">{{m}}</span>
+
+      {% endfor %}
+      </div>     
+      
+      <div class="badges_rows">
+          Tags:
+          {% for m in tags %}
+          <span class="badge badge-pill badge-info">{{m}}</span>
+
+          {% endfor %}
+      </div>
+      </div>
+      
+      
+      <form action="../Cart/" method="post" class="">
+          {% csrf_token %}
+          <input type="hidden" name="product" id="product" value="{{game.id}}" />
+          <button type="submit" class="btn btn-success"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+          </form>
+    
+  </div>
+</div>
+
+        
+    </div>
+    
+  </div>
+
+
+
+
+
+<!-- Swiper JS -->
+
+<script src="../../static/app/scripts/swiper.min.js"></script>
+  
+<script>
+
+     var galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs
+      }
+    });
+</script>
+
+
+{% endblock %}

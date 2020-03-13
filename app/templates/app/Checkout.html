@@ -1,0 +1,44 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<link href="../../static/app/content/Catalog.css" rel="stylesheet" />
+
+<h2>Checkout</h2>
+<form action="../PayGames/" method="post" class="">
+    {% csrf_token %}
+    {% if cartlist %}
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="form-group">
+                <label for="txt_credit_card">Credit Card Number</label>
+                <input type="text" class="form-control" id="txt_credit_card" name="creditcard" aria-describedby="creditHelp" required>
+                <small id="creditHelp" class="form-text text-muted">For your security our website encripts all your personal information</small>
+            </div>
+        </li>
+
+        {% for game in cartlist %}
+
+
+        <li class="list-group-item">{{game.product.name}}</li>
+
+
+
+        {% endfor %}
+        <li class="list-group-item list-group-item-info">Total: ${{TotalPrice}}</li>
+    </ul>
+    <br />
+    <button class="btn btn-success">Pay Games</button>
+
+    {% else %}
+    <alert class="alert alert-danger">No Game Selected , Please go back to Catalog to select a game</alert>
+    {% endif %}
+    
+
+</form>
+
+    <script src="../../static/app/scripts/Catalog.js"></script>
+
+
+
+    {% endblock %}

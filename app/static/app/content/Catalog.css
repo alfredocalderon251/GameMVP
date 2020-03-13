@@ -1,0 +1,23 @@
+
+@import url('https://fonts.googleapis.com/css?family=Trade+Winds&display=swap');
+
+.cardimage{
+    max-width:250px;;
+}
+.cardstyle{
+    width:auto !important; 
+}
+
+.bannerstyle {
+    background-image: url(https://media.vandal.net/i/1200x630/32817/resident-evil-2-remake-20191112032753_1.jpg);
+    background-size: cover;
+    background-position: top;
+    height: 250px;
+    color: white;
+    font-weight: bolder;
+    font-size: 22pt;
+    font-family: 'Trade Winds', cursive;
+}
+.container{
+    
+}
