@@ -228,7 +228,8 @@ def PayGames(request):
 
 def MyGames(request):
     assert isinstance(request,HttpRequest)
-    MyGames=mygames.objects.all().select_related('product')
+    current_user=request.user
+    MyGames=mygames.objects.all().filter(user=current_user).select_related('product')
     return render(
         request,
         'app/MyGames.html',
