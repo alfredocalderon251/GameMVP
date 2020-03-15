@@ -279,7 +279,7 @@ def Report_Chart(request):
 
         return render(
         request,
-        'app/Report_Chart.html',
+        'app/Report_chart.html',
         {
             'title':'Report Charts',
             'message':'Games Bought',
