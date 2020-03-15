@@ -13,6 +13,8 @@
    {% url 'home' as home_url %}
     {% url 'MyGames' as MyGames_url %}
     {% url 'Cart' as MyCart_url %}
+    {% url 'Report_Bought' as ReportBought_url %}
+    {% url 'Report_Chart' as Report_chart_url %}
 </head>
 
 <body>
@@ -36,6 +38,19 @@
         <li class="nav-item {% if request.get_full_path == MyCart_url %}active{% endif %}">
         <a class="nav-link" href="{% url 'Cart' %}">MyCart</a>
       </li>
+
+        {% if user.is_authenticated and user.is_staff  %}
+        <li class="nav-item {% if request.get_full_path == ReportBought_url %}active{% endif %}">
+            <a class="nav-link" href="{% url 'Report_Bought'%}">Report Games Bought</a>
+        </li>
+        {% endif %}
+
+        {% if user.is_authenticated and user.is_staff  %}
+        <li class="nav-item {% if request.get_full_path == Report_chart_url %}active{% endif %}">
+            <a class="nav-link" href="{% url 'Report_Chart'%}">Report Games Chart</a>
+        </li>
+        {% endif %}
+        
 
       
       

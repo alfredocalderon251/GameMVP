@@ -35,9 +35,12 @@ urlpatterns = [
   path('Checkout/',views.Checkout,name="Checkout"),
   path('MyGames/',views.MyGames,name="MyGames"),
   path('PayGames/',views.PayGames,name="PayGames"),
+  path('Report_Bought/',views.Report_Bought,name="Report_Bought"),
+  path('Report_Bought/',views.Report_Bought,name="Report_Bought"),
+  
   
 
-    path('NewAccount/',views.NewAccount, name='NewAccount'),
+    path('Report_Chart/',views.Report_Chart, name='Report_Chart'),
     path('admin/', admin.site.urls),
 
    path("ajax/RemoveCartGame/",views.RemoveCartGame,name='RemoveCartGame'),

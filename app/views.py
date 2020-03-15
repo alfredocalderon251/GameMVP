@@ -12,6 +12,7 @@ from django.http.response import JsonResponse
 import uuid 
 from django.shortcuts import redirect
 from datetime import date
+from django.db.models import Count
 
 
 
@@ -223,12 +224,13 @@ def PayGames(request):
         newbuy.save()
         game.delete()   
 
-    return redirect()
+    return redirect(home)
 
 
 def MyGames(request):
     assert isinstance(request,HttpRequest)
     current_user=request.user
+    
     MyGames=mygames.objects.all().filter(user=current_user).select_related('product')
     return render(
         request,
@@ -239,6 +241,46 @@ def MyGames(request):
             'year':datetime.now().year,
             'MyGames':MyGames            
         })
+
+def Report_Bought(request):
+    assert isinstance(request,HttpRequest)
+    current_user=request.user
+    if current_user.is_staff ==False:
+        return redirect(home)
+
+    Bought_games=mygames.objects.all().select_related('product').select_related('user').order_by('-dateofpurchase')
+    return render(
+        request,
+        'app/Report_bought.html',
+        {
+            'title':'Report Games Bought',
+            'message':'Games Bought',
+            'year':datetime.now().year,
+            'Games':Bought_games            
+        })
+
+def Report_Chart(request):
+    current_user=request.user
+    if current_user.is_staff ==False:
+        return redirect(home)
+
+    labels = []
+    data = []
+
+    Bought_games=mygames.objects.all().select_related('product').order_by('-dateofpurchase')
+    Bought_games_test=mygames.objects.all().select_related('product').aggregate(Count('product'))
+    allgames=Product.objects.all()
+    
+    for game in allgames:
+        labels.append(game.name)
+        totalbuy=mygames.objects.all().filter(product=game).select_related('product').count()
+        print(totalbuy)
+        data.append(totalbuy)
+
+    return render(request, 'app/Report_Chart.html', {
+        'labels': labels,
+        'data': data,
+    })
 
 
 

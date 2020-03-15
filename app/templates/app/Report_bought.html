@@ -1,0 +1,23 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<link href="../../static/app/content/Catalog.css" rel="stylesheet" />
+
+<h2>Report Games Bought</h2>
+<br />
+
+<p>Latest Purchases</p>
+
+    {% for game in Games %}
+<ul class="list-group list-group-horizontal" style="margin-top:10px; margin-bottom:10px;">
+    <li class="list-group-item">Name: {{game.product.name}}  </li>
+    <li class="list-group-item">Customer: {{game.user.username}}</li>
+    <li class="list-group-item">Date:{{game.dateofpurchase}}</li>
+</ul>
+    {% endfor %}
+
+
+
+
+<script src="../../static/app/scripts/Catalog.js"></script>
+{% endblock %}
