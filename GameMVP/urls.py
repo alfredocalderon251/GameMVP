@@ -40,7 +40,7 @@ urlpatterns = [
   
   
 
-    path('Report_Chart/',views.Report_Chart, name='Report_Chart'),
+    path('Report_chart/',views.Report_chart, name='Report_chart'),
     path('admin/', admin.site.urls),
 
    path("ajax/RemoveCartGame/",views.RemoveCartGame,name='RemoveCartGame'),

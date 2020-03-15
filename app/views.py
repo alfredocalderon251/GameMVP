@@ -259,7 +259,7 @@ def Report_Bought(request):
             'Games':Bought_games            
         })
 
-def Report_Chart(request):
+def Report_chart(request):
     current_user=request.user
     if current_user.is_staff ==False:
         return redirect(home)
