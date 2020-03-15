@@ -224,7 +224,7 @@ def PayGames(request):
         newbuy.save()
         game.delete()   
 
-    return redirect(home)
+    return redirect(MyGames)
 
 
 def MyGames(request):
@@ -278,6 +278,9 @@ def Report_Chart(request):
         data.append(totalbuy)
 
     return render(request, 'app/Report_Chart.html', {
+        'title':'Report Charts',
+        'message':'Games Bought',
+        'year':datetime.now().year,
         'labels': labels,
         'data': data,
     })

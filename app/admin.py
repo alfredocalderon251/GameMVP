@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product,category,tag,gameplayimages,youtubevideo
+from .models import Product,category,tag,gameplayimages,youtubevideo,mygames
 
 class ProductAdmin(admin.ModelAdmin):
     list_display=('id','name')
@@ -16,6 +16,9 @@ class gameplayimagesAdmin(admin.ModelAdmin):
 class youtubevideoAdmin(admin.ModelAdmin):
     list_display=('id','Prod')
 
+class mygamesAdmin(admin.ModelAdmin):
+    list_display=('id','product')
+
 
 #Register your models here
 admin.site.register(Product,ProductAdmin)
@@ -23,6 +26,7 @@ admin.site.register(category,categoryAdmin)
 admin.site.register(tag,tagAdmin)
 admin.site.register(gameplayimages,gameplayimagesAdmin)
 admin.site.register(youtubevideo,youtubevideoAdmin)
+admin.site.register(mygames,mygamesAdmin)
 
 
 ##Create Admin templates for the models

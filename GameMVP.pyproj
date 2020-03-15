@@ -92,10 +92,11 @@
     <Content Include="app\templates\app\Cart.html" />
     <Content Include="app\templates\app\Checkout.html" />
     <Content Include="app\templates\app\game.html" />
+    <Content Include="app\templates\app\NewAccount.html" />
     <Content Include="app\templates\app\Report_Chart.html" />
     <Content Include="app\templates\app\Report_bought.html" />
     <Content Include="app\templates\app\MyGames.html" />
-    <Content Include="app\templates\app\NewAccount.html" />
+    <Content Include="app\templates\app\NewAccount_old.html" />
     <Content Include="app\templates\app\product.html" />
     <None Include="FolderProfile.pubxml" />
     <Content Include="libman.json" />

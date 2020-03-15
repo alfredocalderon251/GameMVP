@@ -36,6 +36,7 @@ urlpatterns = [
   path('MyGames/',views.MyGames,name="MyGames"),
   path('PayGames/',views.PayGames,name="PayGames"),
   path('Report_Bought/',views.Report_Bought,name="Report_Bought"),
+  path('NewAccount/',views.NewAccount,name="NewAccount"),
   
   
 
