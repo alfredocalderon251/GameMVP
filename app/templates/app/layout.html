@@ -30,7 +30,7 @@
       <li class="nav-item {% if request.get_full_path == home_url %}active{% endif %}">
         <a class="nav-link" href="{% url 'home' %}">Catalog</a>
       </li>
-
+        
         <li class="nav-item {% if request.get_full_path == MyGames_url %}active{% endif %}">
         <a class="nav-link" href="{% url 'MyGames' %}">MyGames</a>
       </li>
@@ -38,6 +38,7 @@
         <li class="nav-item {% if request.get_full_path == MyCart_url %}active{% endif %}">
         <a class="nav-link" href="{% url 'Cart' %}">MyCart</a>
       </li>
+        
 
         {% if user.is_authenticated and user.is_staff  %}
         <li class="nav-item {% if request.get_full_path == ReportBought_url %}active{% endif %}">
