@@ -66,12 +66,13 @@
       </div>
       </div>
       
-      
+      {% if user.is_authenticated %}
       <form action="../Cart/" method="post" class="">
           {% csrf_token %}
           <input type="hidden" name="product" id="product" value="{{game.id}}" />
           <button type="submit" class="btn btn-success"><i class="fas fa-cart-plus"></i> Add to Cart</button>
           </form>
+      {% endif %}
     
   </div>
 </div>
