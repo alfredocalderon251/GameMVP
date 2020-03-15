@@ -277,16 +277,17 @@ def Report_Chart(request):
         print(totalbuy)
         data.append(totalbuy)
 
-    return render(
+        return render(
         request,
-       'app/Report_Chart.html',
+        'app/Report_Chart.html',
         {
-        'title':'Report Charts',
-        'message':'Games Bought',
-        'year':datetime.now().year,
-        'labels': labels,
-        'data': data,
+            'title':'Report Charts',
+            'message':'Games Bought',
+            'year':datetime.now().year,
+            'labels': labels,
+            'data': data,           
         })
+
 
 
 
