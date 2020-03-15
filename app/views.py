@@ -277,7 +277,7 @@ def Report_chart(request):
         print(totalbuy)
         data.append(totalbuy)
 
-        return render(
+    return render(
         request,
         'app/Report_chart.html',
         {
@@ -287,6 +287,9 @@ def Report_chart(request):
             'labels': labels,
             'data': data,           
         })
+        
+
+        
 
 
 
