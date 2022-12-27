@@ -9,7 +9,7 @@ psycopg2==2.8.4
 python-dateutil==2.8.1
 python-mimeparse==1.6.0
 pytz==2019.3
-setuptools==41.2.0
+setuptools==65.5.1
 six==1.14.0
 sqlparse==0.3.0
 whitenoise==5.0.1
